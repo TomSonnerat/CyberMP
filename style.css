@@ -215,7 +215,7 @@ main {
     z-index: 1;
     text-align: center;
     color: white;
-    top: 60%;
+    top: 72%;
     transform: translateY(-50%);
 }
 
@@ -223,4 +223,156 @@ main {
     display: flex;
     gap: 20px;
     justify-content: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 5em;
+    letter-spacing: 8px;
+}
+
+.overlay-content p {
+    font-size: 2em;
+    margin:5px 0 35px;
+}
+
+.overlay-join-button,.overlay-join-button::after{
+    /* Inspired by this codepen: https://codepen.io/leylasheth/pen/rNMwRGL */
+    cursor: pointer;
+    width:280px;
+    height:60px;
+    font-size:1em;
+    font-weight: 600;
+    background:linear-gradient(45deg,transparent 5%,#f8f005 5%);
+    border:0;
+    color:#000000;
+    letter-spacing:3px;
+    line-height:60px;
+    box-shadow:6px 0px 0px #00E6F6;
+    outline:transparent;
+    position:relative;
+}
+
+.overlay-join-button::after{
+    --slice-0:inset(50% 50% 50% 50%);
+    --slice-1:inset(80% -6px 0 0);
+    --slice-2:inset(50% -6px 30% 0);
+    --slice-3:inset(10% -6px 85% 0);
+    --slice-4:inset(40% -6px 43% 0);
+    --slice-5:inset(80% -6px 5% 0);
+    content:"JOIN THE COMMUNITY";
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:linear-gradient(45deg,transparent 3%,#00E6F6 3%,#00E6F6 5%,#f8f005 5%);
+    text-shadow:-3px -3px 0px #F8F005,3px 3px 0px #00E6F6;
+    clip-path:var(--slice-0);
+}
+
+.overlay-join-button:hover::after{
+    animation:1s glitch;
+    animation-timing-function:steps(2,end);
+}
+
+@keyframes glitch{
+    0%{
+        clip-path:var(--slice-1);
+        transform:translate(-20px,-10px);
+    }
+    10%{
+        clip-path:var(--slice-3);
+        transform:translate(10px,10px);
+    }
+    20%{
+        clip-path:var(--slice-1);
+        transform:translate(-10px,10px);
+    }
+    30%{
+        clip-path:var(--slice-3);
+        transform:translate(0px,5px);
+    }
+    40%{
+        clip-path:var(--slice-2);
+        transform:translate(-5px,0px);
+    }
+    50%{
+        clip-path:var(--slice-3);
+        transform:translate(5px,0px);
+    }
+    60%{
+        clip-path:var(--slice-4);
+        transform:translate(5px,10px);
+    }
+    70%{
+        clip-path:var(--slice-2);
+        transform:translate(-10px,10px);
+    }
+    80%{
+        clip-path:var(--slice-5);
+        transform:translate(20px,-10px);
+    }
+    90%{
+        clip-path:var(--slice-1);
+        transform:translate(-10px,0px);
+    }
+    100%{
+        clip-path:var(--slice-1);
+        transform:translate(-20px,-10px);
+    }
+}
+
+.overlay-support-button {
+    height: 100%;
+    padding: 0 40px;
+    font-size: 1em;
+    font-weight: 600;
+    clip-path: polygon(0% 0, 92% 0, 100% 40%, 100% 100%, 0 100%);
+    color: white;
+    border: 1px solid #fcee0a;
+    background: #00000085;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.overlay-support-button::after {
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fcee0a;
+    clip-path: polygon(92% 0, 94% 0%, 100% 38%, 100% 40%);
+}
+
+.overlay-support-button:hover {
+    background: #ff013c;
+}
+
+.social-links {
+    height: 2em;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.social-links img{
+    height: auto;
+    width: 1.5em;
+    filter: invert(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-links img:hover {
+    transform: scale(1.1) rotate(-15deg);
+}
+
+.scroll-invitation {
+    width: 50px;
 }
