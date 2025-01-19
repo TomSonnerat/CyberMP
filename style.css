@@ -54,6 +54,7 @@ nav::before {
 
 .nav-pages {
     display: flex;
+    align-items: center;
     margin-left:20px;
 }
 
@@ -87,4 +88,46 @@ nav::before {
 .nav-action:hover {
     background: #e2d608;
     cursor: pointer;
+}
+
+/* Watermark */
+
+.watermark {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    height: 2em;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 600;
+    color: #fcee0a;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.watermark img {
+    height: 100%;
+    filter: invert(76%) sepia(94%) saturate(678%) hue-rotate(3deg) brightness(110%) contrast(102%);
+    transition: transform 0.2s ease-in-out;
+
+}
+
+.watermark p {
+    font-size: 1.2em;
+}
+
+.watermark:hover {
+    transform: scale(1.05);
+}
+
+.watermark:hover img {
+    transform: rotate(-8deg);
+}
+
+@media screen and (max-width: 900px) {
+    .watermark p {
+        display: none;
+    }
 }
