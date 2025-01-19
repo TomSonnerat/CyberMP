@@ -1,3 +1,5 @@
+/* Bases */
+
 @font-face {
     font-family: "Blender Pro Book";
     src: url("https://db.onlinewebfonts.com/t/335787aa6f57d71cabe8eb5dc89c6d6b.eot");
@@ -19,14 +21,19 @@ body {
     width: 100vw;
     height: 100vh;
     font-family: 'Blender Pro Book', 'Satoshi', sans-serif;
-    background: url(./videoframe_7358.png); /* Test */
+    overflow-x:hidden;
 }
 
-/* Navabr */
+header {
+    position: relative;
+    z-index: 2;
+}
+
+/* Navbar */
 
 nav {
     font-size: 1em;
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     display: flex;
@@ -93,7 +100,7 @@ nav::before {
 /* Watermark */
 
 .watermark {
-    position: absolute;
+    position: fixed;
     left: 20px;
     top: 20px;
     height: 2em;
@@ -130,4 +137,90 @@ nav::before {
     .watermark p {
         display: none;
     }
+}
+
+/* Main section */
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.black-mask {
+    background: rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+}
+
+.black-mask::before {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    width: 400%;
+    height: 400%;
+    opacity: 0.12;
+    background-image: url('path-to-your/noise-texture.svg');
+    transform: scale(0.5);
+    animation: noise 8s steps(1) infinite;
+}
+
+@keyframes noise {
+    0% {
+        transform: scale(0.5) translate(0, 0);
+    }
+    10% {
+        transform: scale(0.5) translate(-1%, -1%);
+    }
+    20% {
+        transform: scale(0.5) translate(-2%, 1%);
+    }
+    30% {
+        transform: scale(0.5) translate(1%, -2%);
+    }
+    40% {
+        transform: scale(0.5) translate(-1%, 3%);
+    }
+    50% {
+        transform: scale(0.5) translate(-2%, 1%);
+    }
+    60% {
+        transform: scale(0.5) translate(3%, 0);
+    }
+    70% {
+        transform: scale(0.5) translate(0, 2%);
+    }
+    80% {
+        transform: scale(0.5) translate(1%, 7%);
+    }
+    90% {
+        transform: scale(0.5) translate(-2%, 2%);
+    }
+}
+
+.overlay-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    top: 60%;
+    transform: translateY(-50%);
+}
+
+.overlay-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }

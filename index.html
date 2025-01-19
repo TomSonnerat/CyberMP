@@ -7,26 +7,45 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
-    <a href="./index.html" class="watermark">
-        <img src="./src/cbmp_logo.svg" alt="CyberMP logo">
-        <p>CyberMP</p>
-    </a>
-
-    <nav>
-        <div class="nav-pages">
-            <a href="./home">Presentation</a>
-            <a href="./articles">Articles</a>
-            <a href="./gallery">Gallery</a>
-            <a href="./about">About us</a>
-        </div>
-        <div class="nav-language">EN</div>
-        <a href="https://discord.gg/eWQbTncXbr" target="_blank" class="nav-action">
-            Join Whitelist
+    <header>
+        <a href="./index.html" class="watermark">
+            <img src="./src/cbmp_logo.svg" alt="CyberMP logo">
+            <p>CyberMP</p>
         </a>
-    </nav>
-
     
+        <nav>
+            <div class="nav-pages">
+                <a href="./home">Presentation</a>
+                <a href="./articles">Articles</a>
+                <a href="./gallery">Gallery</a>
+                <a href="./about">About us</a>
+            </div>
+            <div class="nav-language">EN</div>
+            <a href="https://discord.gg/eWQbTncXbr" target="_blank" class="nav-action">
+                Join Whitelist
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <video class="video-background" autoplay muted loop playsinline>
+            <source src="./src/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    
+        <div class="black-mask"></div>
+    
+        <div class="overlay-content">
+            <h1>CyberMP</h1>
+            <p>A multiplayer mod for Cyberpunk 2077 game</p>
+            <div class="overlay-buttons">
+                <button>Join whitelist</button>
+                <button>Support</button>
+            </div>
+        </div>
+    </main>
+
+    <section></section>
 
     <script src="./script.js"></script>
 </body>
