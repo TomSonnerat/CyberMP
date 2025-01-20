@@ -29,13 +29,33 @@ header {
     z-index: 2;
 }
 
+/* Slide Bar */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f9f1053b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f9f005;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e2d608;
+    cursor: pointer;
+}
+
 /* Navbar */
 
 nav {
-    font-size: 1em;
+    font-size: 1.4em;
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 30px;
+    right: 30px;
     display: flex;
     height: auto;
     width:fit-content;
@@ -111,9 +131,9 @@ nav::before {
 
 .watermark {
     position: fixed;
-    left: 20px;
-    top: 20px;
-    height: 2em;
+    left: 30px;
+    top: 30px;
+    height: 3em;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -132,7 +152,7 @@ nav::before {
 }
 
 .watermark p {
-    font-size: 1.2em;
+    font-size: 1.8em;
 }
 
 .watermark:hover {
@@ -143,7 +163,7 @@ nav::before {
     transform: rotate(-8deg);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
     .watermark p {
         display: none;
     }
@@ -154,7 +174,7 @@ nav::before {
 main {
     position: relative;
     width: 100%;
-    height: 92vh;
+    height: 95vh;
     overflow: hidden;
 }
 
@@ -231,6 +251,7 @@ main {
 
 .overlay-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
     margin-bottom: 20px;
@@ -335,7 +356,7 @@ h1 {
 }
 
 .overlay-support-button {
-    height: 100%;
+    height: 60px;
     padding: 0 40px;
     font-size: 1em;
     font-weight: 600;
@@ -386,3 +407,42 @@ h1 {
 .scroll-invitation {
     width: 50px;
 }
+
+/* .presentation-section::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 42px;
+    background-image: url(./src/effet-glitch-haut.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+} */
+
+.presentation-section {
+    height: 800px;
+    width: 100vw;
+    padding: 20px 0;
+    box-shadow: inset 0 50px 40px -40px #fff900;
+    background: #181818;
+    position: relative;
+}
+
+.dotted-hr {
+    width: 100%;
+    height: 6px;
+    background-image: radial-gradient(circle, #fff900 2px, transparent 2px), linear-gradient(0deg, transparent 33%, #ffffff54 33%, #ffffff54 66%, transparent 68%, transparent 100%);
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-size: 50px 6px;
+    border: none;
+}
+
+.presentation-section {
+      background:
+          linear-gradient(90deg, #000000 47px, transparent 1%) center / 50px 50px,
+          linear-gradient(#000000 47px, transparent 1%) center / 50px 50px,
+          #fffb002b;
+  }
