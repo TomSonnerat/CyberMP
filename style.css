@@ -421,6 +421,8 @@ h1 {
     background-position: bottom;
 } */
 
+/* Presentation */
+
 .presentation-section {
     height: 800px;
     width: 100vw;
@@ -441,8 +443,116 @@ h1 {
 }
 
 .presentation-section {
-      background:
-          linear-gradient(90deg, #000000 47px, transparent 1%) center / 50px 50px,
-          linear-gradient(#000000 47px, transparent 1%) center / 50px 50px,
-          #fffb002b;
-  }
+      background:linear-gradient(90deg, #000000 47px, transparent 1%) center / 50px 50px,linear-gradient(#000000 47px, transparent 1%) center / 50px 50px,#fffb002b;
+}
+
+.text-field {
+    width: 95%;
+    height: 680px;
+    display: flex;
+    margin: 50px auto 0;
+    justify-content: center;
+    gap: 3vw;
+    align-items: flex-start;
+}
+
+.text-field-outer {
+    width: 85%;
+    max-width: 1400px;
+    height: 680px;
+    background: #fff900;
+    color: #ffffff;
+    position: relative;
+clip-path: polygon(0% 14%, 5% 4.5%, 81.5% 4.5%, 84% 0%, 93% 0%, 96.5% 7.5%, 96.5% 37%, 100% 44%, 100% 91%, 95.5% 100%, 63% 100%, 60% 94.5%, 5% 94.5%, 2% 88%, 2% 50%, 0% 45%);
+}  
+
+.text-field-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 50px 78px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: #000000;
+    clip-path: polygon(0% 14%, 5% 4.5%, 82% 4.5%, 84.5% 0%, 93% 0%, 96.5% 7.5%, 96.5% 37%, 100% 44%, 100% 91%, 95.5% 100%, 63% 100%, 60% 94.5%, 5% 94.5%, 2% 88%, 2% 50%, 0% 45%);
+    transform: scale(0.99, 0.985);
+}
+
+.presentation-side-decoration {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.presentation-barcode {
+    height: 80%;
+}
+
+.presentation-arasaka {
+    height: 13%;
+}
+
+@media screen and (max-width: 1400px) {
+    .presentation-side-decoration, .presentation-side-decoration * {
+        display: none;
+    }
+
+    .text-field-outer {
+        width: 95%;
+    }
+}
+
+.text-field-text {
+    width: 60%;
+}
+
+.text-field-image {
+    width: 35%;
+}
+  
+.stacked-wrapper {
+position: relative;
+width: 100%;
+height: 100%;
+}
+
+.image-layer {
+position: absolute;
+width: 95%;
+height: auto;
+top: 0;
+left: 0;
+}
+
+.text-field-image .original {
+border-radius: 20px;
+z-index: 3;
+}
+
+.text-field-image .shadow-1 {
+border-radius: 20px;
+z-index: 2;
+opacity: 0.5;
+transform: translate(15px, 15px);
+}
+
+.text-field-image .shadow-2 {
+border-radius: 20px;
+z-index: 1;
+opacity: 0.25;
+transform: translate(30px, 30px);
+}
+
+.text-field-inner h2 {
+    font-size: 3em;
+    margin: 20px 0 30px;
+}
+
+.text-field-inner p {
+    font-size: 1.5em;
+}
