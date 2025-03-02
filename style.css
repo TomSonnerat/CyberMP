@@ -778,7 +778,7 @@ h1 {
 .second-images button div {
     height: 95%;
     width: 99%;
-    line-height: 3.3em;
+    line-height: 3.5em;
     font-weight: 600;
     position: absolute;
     top: 50%;
@@ -793,4 +793,112 @@ h1 {
 .second-images button div:hover {
     background: #000000;
     color: #fcee0a;
+}
+
+/* Features Section */
+
+.features-section {
+    background: #000000;
+    color: #e3e3e3;
+}
+
+:root {
+--ease-out: cubic-bezier(0.5, 1, 0.89, 1);
+--ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+
+.features-section {
+width: 100%;
+}
+.features-section h2 {
+text-align: center;
+}
+.cards {
+display: grid;
+grid-template-columns: repeat(var(--count, 1), 1fr);
+gap: 3rem;
+margin: auto;
+inline-size: min(var(--max, 15rem), 100%);
+}
+@media (min-width: 25rem) {
+.cards {
+--count: 2;
+--max: 30rem;
+}
+}
+@media (min-width: 45rem) {
+.cards {
+--count: 4;
+--max: 70rem;
+}
+}
+.box {
+position: relative;
+overflow: hidden;
+display: grid;
+grid-template-areas: "box";
+place-items: center;
+aspect-ratio: 4 / 5;
+border: 1px solid #27272a;
+isolation: isolate;
+transition: border-color 200ms var(--ease-out);
+user-select: none;
+}
+.box::before {
+content: "";
+position: absolute;
+inset: 0;
+background: radial-gradient(circle at bottom left, transparent 55%, #101012);
+pointer-events: none;
+box-shadow: #000000 -0.5cqi 0.5cqi 2.5cqi inset;
+transition: opacity 900ms var(--ease-out);
+}
+.box::after {
+content: "";
+position: absolute;
+inset: 0;
+margin: auto;
+aspect-ratio: 1;
+background: radial-gradient(circle, #000000, transparent 65%);
+opacity: 0;
+transition: opacity 800ms var(--ease-out);
+}
+.box > * {
+grid-area: box;
+}
+.box svg {
+position: relative;
+z-index: 1;
+width: 30%;
+height: auto;
+color: #52525b;
+transition: 300ms var(--ease-out);
+transition-property: color, transform;
+}
+.box button {
+opacity: 0;
+}
+.box:focus-within {
+outline: 5px auto Highlight;
+outline: 5px auto -webkit-focus-ring-color;
+}
+.box:hover,
+.box:focus-within {
+border-color: var(--active-color, var(--foreground));
+transition: border-color 800ms var(--ease-in-out);
+}
+.box:hover svg,
+.box:focus-within svg {
+color: var(--active-color, var(--foreground));
+transform: scale(1.1);
+transition: 300ms var(--ease-in-out);
+}
+.box:hover::before,
+.box:focus-within::before {
+opacity: 0;
+}
+.box:hover::after,
+.box:focus-within::after {
+opacity: 1;
 }
